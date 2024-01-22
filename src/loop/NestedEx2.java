@@ -9,5 +9,6 @@ public class NestedEx2 {
         for (int i = 1;i <=rows;i++){
             System.out.println("*".repeat(i));
         }
+        //check
     }
 }
