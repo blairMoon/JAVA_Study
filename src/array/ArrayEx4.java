@@ -6,7 +6,7 @@ public class ArrayEx4 {
         System.out.println("입력받을 숫자의 개수를 입력하세요:");
         int theNumberOfNum = scanner.nextInt();
 
-        System.out.println("5개의 정수를 입력하세요:");
+        System.out.println(theNumberOfNum+"개의 정수를 입력하세요:");
 
 
         int sum = 0;
