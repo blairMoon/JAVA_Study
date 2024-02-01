@@ -10,9 +10,18 @@ public class MovieReviewMain1 {
       movieReview2.title = "어바웃타임";
       movieReview2.review = "인생 시간 영화!";
 
-        System.out.println("영화제목: " + movieReview1.title + ", 리뷰:" + movieReview1.review);
-        System.out.println("영화제목: " + movieReview2.title + ", 리뷰:" + movieReview2.review);
-        System.out.println();
+      MovieReview[] movieReviews = {movieReview1,movieReview2};
+      // for문으로 돌리기
+      for (int i = 0 ; i < movieReviews.length ; i++ ){
+          System.out.println("영화제목"+ movieReviews[i].title + ", 리뷰" + movieReviews[i].review);
+
+
+      }
+        //foreach문으로 돌리기
+        for (MovieReview m : movieReviews) {
+            System.out.println("영화제목"+ m.title + ", 리뷰" + m.review);
+
+        }
 
     }
 
