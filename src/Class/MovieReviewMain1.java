@@ -15,10 +15,11 @@ public class MovieReviewMain1 {
       for (int i = 0 ; i < movieReviews.length ; i++ ){
           System.out.println("영화제목"+ movieReviews[i].title + ", 리뷰" + movieReviews[i].review);
 
-
       }
         //foreach문으로 돌리기
         for (MovieReview m : movieReviews) {
+            //MovieReview는 타입을 나타내는 것 , m은 변수 , movieReviews는 array
+
             System.out.println("영화제목"+ m.title + ", 리뷰" + m.review);
 
         }
