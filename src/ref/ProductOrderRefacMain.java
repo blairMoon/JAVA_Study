@@ -1,19 +1,37 @@
 package ref;
 
+import java.util.Scanner;
+
 public class ProductOrderRefacMain {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("입력할 주문의 개수를 입력하세요");
+        int orderNum  = scanner.nextInt();
+
         int totalAmount = 0;
-        ProductOrder ProductOrder1 = createOrder("두부", 2000,2);
-        ProductOrder ProductOrder2 = createOrder("김치", 5000,1);
-        ProductOrder ProductOrder3 = createOrder("콜라", 1500,2);
-
-        ProductOrder[] productOrders = {ProductOrder1,ProductOrder2,ProductOrder3};
-
+       ProductOrder[] productOrders = collectOrderDetails(orderNum);
         printOrders(productOrders);
         totalAmount = getTotalAmount(productOrders,totalAmount);
         System.out.println("총 결제 금액: " + totalAmount);
 
     }
+    public  static  ProductOrder[] collectOrderDetails(int orderNum){
+        ProductOrder[] productOrders = new ProductOrder[orderNum];
+        for (int i = 0;i < orderNum;i++) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println((i+1) +"번째 주문 정보를 입력하세요.");
+            System.out.println("상품명:");
+            String productName  = scanner.nextLine();
+            System.out.println("가격:");
+            int productPrice  = scanner.nextInt();
+            System.out.println("수량:");
+            int productQuantity = scanner.nextInt();
+            productOrders[i] = createOrder(productName,productPrice,productQuantity);
+        }
+        return productOrders;
+
+    }
+
     public  static  ProductOrder createOrder(String productName , int price, int quantity) {
         ProductOrder productOrder = new ProductOrder();
         productOrder.productName = productName;
